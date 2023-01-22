@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {
   AngularFireStorage,
@@ -16,7 +16,7 @@ import { ClipService } from 'src/app/services/clip.service';
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.css'],
 })
-export class UploadComponent {
+export class UploadComponent implements OnDestroy {
   isDragover = false;
   file: File | null = null;
   nextStep = false;
